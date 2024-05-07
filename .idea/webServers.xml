@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="9c439f10-7185-4f5a-8e7f-3de50ec1fa99" name="entrega.ru" url="http://31.31.196.33">
+        <fileTransfer rootFolder="/www/ientrega.ru" host="31.31.196.33" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
