@@ -11,7 +11,8 @@ add_action( 'after_setup_theme', function () {
 	register_nav_menus(
 		array(
 			'header_menu' => 'Меню в шапке',
-			'footer_menu' => 'Меню в подвале',
+			'footer_menu_clients' => 'Меню в подвале клиентам',
+			'footer_menu_about' => 'Меню в подвале о компании',
 		)
 	);
 
@@ -39,6 +40,7 @@ function true_enqueue_js_and_css() {
 	wp_enqueue_script( 'accordion', get_template_directory_uri() . '/assets/js/accordion.min.js', array(), false, true );
 	wp_enqueue_script( 'yandex-map', get_template_directory_uri() . '/assets/js/map.js', array(), false, true );
 	wp_enqueue_script( 'imask-script', get_template_directory_uri() . '/assets/js/imask.js', array(), false, true );
+	wp_enqueue_script( 'parallax-script', get_template_directory_uri() . '/assets/js/parallax.min.js', array(), false, true );
 	wp_enqueue_script( 'main-script', get_template_directory_uri() . '/assets/js/index.js', array(), false, true );
 }
 

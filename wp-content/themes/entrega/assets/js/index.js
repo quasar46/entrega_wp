@@ -9,13 +9,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
     main.style.marginTop = headerHeight + 'px'
 
-    if (document.querySelector('#phone')) {
-        const element = document.getElementById('phone');
+    if (document.querySelectorAll('.phone').length > 0) {
+        const phones = document.querySelectorAll('.phone')
         const maskOptions = {
             mask: '+7(000)000-00-00',
             lazy: false
         }
-        const mask = new IMask(element, maskOptions);
+        phones.forEach(phone => {
+            const mask = new IMask(phone, maskOptions);
+        })
+
+    }
+
+    if (document.querySelectorAll('.open-modal').length > 0) {
+        const btnOpenModal = document.querySelectorAll('.open-modal')
+        const modalWindow = document.querySelector('.feedback-modal')
+        const btnCloseModal = document.querySelectorAll('.modal-close')
+
+        btnCloseModal.forEach(btnCloseModal => {
+            btnCloseModal.addEventListener('click', () => {
+                closeFeedback()
+            })
+        })
+
+        btnOpenModal.forEach(el => {
+            el.addEventListener('click', (e) => {
+                openFeedback()
+            })
+        })
+
+        function openFeedback() {
+            modalWindow.classList.add('open')
+            overlay.classList.add('active')
+        }
+
+        function closeFeedback() {
+            modalWindow.classList.remove('open')
+            overlay.classList.remove('active')
+        }
     }
 
 
@@ -66,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.target.classList.contains('overlay')) {
             closeCart()
             closeMenu()
+            closeFeedback()
         }
     })
 
@@ -631,6 +663,40 @@ document.addEventListener('DOMContentLoaded', function () {
     if (document.querySelector('.accordion-container')) {
         new Accordion('.accordion-container');
     }
+
+
+
+
+    // parallax
+    // const wrapper = document.querySelector('.parallax');
+    // const layers = document.querySelectorAll('.parallax__layer');
+    //
+    // const handleParallax = (evt) => {
+    //     //размер области просмотра
+    //     const parallaxLeftOffset = wrapper.getBoundingClientRect().left;
+    //     const parallaxTopOffset = wrapper.getBoundingClientRect().top;
+    //
+    //     // координаты центра экрана
+    //     const coordX = evt.clientX - parallaxLeftOffset - 0.5 * wrapper.offsetWidth;
+    //     const coordY = evt.clientY - parallaxTopOffset - 0.5 *  wrapper.offsetHeight;
+    //
+    //     layers.forEach((layer)=>{
+    //         const layerSpeed = layer.dataset.speed;
+    //         const x = - (coordX * layerSpeed).toFixed(2);
+    //         const y = - (coordY * layerSpeed).toFixed(2);
+    //         layer.setAttribute('style', `transform: translate(${x}px, ${y}px);`)
+    //     });
+    // };
+    //
+    // const reset = () => {
+    //     layers.forEach((layer)=>{
+    //         layer.removeAttribute('style');
+    //     });
+    // }
+    //
+    // wrapper.addEventListener('mousemove', handleParallax);
+    // wrapper.addEventListener('mouseout', reset);
+
 
 
 })

@@ -19,11 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 get_header(); ?>
-
-<?php
-do_action( 'woocommerce_before_main_content' );
-?>
-
+    <div class="container">
+		<?php
+		do_action( 'woocommerce_before_main_content' );
+		?>
+    </div> <!-- ./container-->
 <?php while ( have_posts() ) : ?>
 	<?php the_post(); ?>
 

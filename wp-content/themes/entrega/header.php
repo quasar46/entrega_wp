@@ -27,7 +27,15 @@
                         <img src="/wp-content/uploads/2024/05/logo.svg" alt="">
                     </a>
                     <div class="header__category">
-                        список категорий
+                        <!--                    получаем ссылки на категории-->
+	                    <?php
+	                    $args       = array( 'taxonomy' => 'product_cat' );
+	                    $categories = get_categories( $args );
+	                    ?>
+	                    <?php foreach ( $categories as $category ): ?>
+		                    <?php $category_link = get_category_link( $category->term_id ); ?>
+                            <a href="<?= $category_link; ?>"><?= $category->name ?></a>
+	                    <?php endforeach; ?>
                     </div>
                     <div class="header__btns">
                         <button class="header__search">

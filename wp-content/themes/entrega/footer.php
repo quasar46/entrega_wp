@@ -2,16 +2,26 @@
 <footer class="footer">
     <div class="container">
         <div class="footer__wrap">
-            <div class="footer__block footer__block--catalog"><a class="footer__logo footer__logo--mobile"
-                                                                 href=""><img src="/wp-content/uploads/2024/05/logo.svg"
-                                                                              alt=""></a><h4
-                        class="footer__title">Каталог</h4>
-                <div class="footer__links"><a href="">Преобразователи частоты</a><a href="">Устройства плавного
-                        пуска</a><a href="">Запасные части</a></div>
+            <div class="footer__block footer__block--catalog">
+                <a class="footer__logo footer__logo--mobile" href="">
+                    <img src="/wp-content/uploads/2024/05/logo.svg" alt="">
+                </a>
+                <h4 class="footer__title">Каталог</h4>
+                <div class="footer__links">
+                    <!--                    получаем ссылки на категории-->
+					<?php
+					$args       = array( 'taxonomy' => 'product_cat' );
+					$categories = get_categories( $args );
+					?>
+					<?php foreach ( $categories as $category ): ?>
+						<?php $category_link = get_category_link( $category->term_id ); ?>
+                        <a href="<?= $category_link; ?>"><?= $category->name ?></a>
+					<?php endforeach; ?>
+                </div>
             </div>
             <div class="footer__block footer__block--btns">
-                <div class="footer__btns"><a class="btn btn--second" href="">открыть каталог</a>
-                    <button class="btn btn--second" href="">Обратная связь</button>
+                <div class="footer__btns"><a class="btn btn--second" href="/shop">открыть каталог</a>
+                    <button class="btn btn--second open-modal">Обратная связь</button>
                 </div>
             </div>
             <div class="footer__block footer__block--list">
@@ -35,24 +45,45 @@
                 </div>
             </div>
             <div class="footer__block footer__block--clients">
-                <div class="footer__item"><h4 class="footer__title">Клиентам</h4>
-                    <div class="footer__links"><a href="">Доставка и оплата</a><a href="">Гарантия</a><a href="">Самовывоз</a><a
-                                href="">Документация</a></div>
-                </div>
-                <div class="footer__item"><h4 class="footer__title">О компании</h4>
-                    <div class="footer__links"><a href="">О компании</a><a href="">Реквизиты</a><a
-                                href="">Новости</a><a href="">Контакты</a></div>
+                <div class="footer__item">
+                    <h4 class="footer__title">Клиентам</h4>
+                    <div class="footer__links">
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer_menu_clients',
+								'container'      => false,
+								'menu_class'     => false,
+							)
+						)
+						?>
+                    </div>
+                    <div class="footer__item">
+                        <h4 class="footer__title">О компании</h4>
+                        <div class="footer__links">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'footer_menu_about',
+									'container'      => false,
+									'menu_class'     => false,
+								)
+							)
+							?>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="footer__bottom"><a href="">ООО Интрега Инжиниринг</a><a href="">Соглашение на обработку
+                    персональных данных</a><a href="">Политика конфиденциальности</a><a href="">Разработка сайта</a>
+            </div>
         </div>
-        <div class="footer__bottom"><a href="">ООО Интрега Инжиниринг</a><a href="">Соглашение на обработку
-                персональных данных</a><a href="">Политика конфиденциальности</a><a href="">Разработка сайта</a></div>
-    </div>
 </footer>
-<div class="vectors">
-</div>
 </div>
 <?php wp_footer(); ?>
+
+<!--обратная связь -->
+<?php get_template_part( 'template-parts/content-feedback-modal' ); ?>
 <!--корзина-->
 <div class="offcanvas">
     <div class="offcanvas__head">

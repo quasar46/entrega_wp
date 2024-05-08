@@ -118,7 +118,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 
         <div class="woocommerce-mini-cart__empty-message">
             <h3>добавьте в корзину товары</h3>
-            <a href="" class="btn btn--main">Открыть каталог</a>
+            <a href="/shop" class="btn btn--second">Открыть каталог</a>
         </div>
         <div class="woocommerce-mini-cart__buttons buttons offcanvas__footer">
 
