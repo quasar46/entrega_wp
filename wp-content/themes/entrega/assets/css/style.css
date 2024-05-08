@@ -2983,6 +2983,7 @@ h2.title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    flex-direction: column;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -3206,6 +3207,14 @@ h2.title {
     color: var(--color-green)
 }
 
+.product__price span del {
+    color: var(--color-grey-text);
+}
+
+.product__price span del span {
+    color: var(--color-grey-text);
+}
+
 .product__price p {
     font-size: 14px;
     font-weight: 500
@@ -3225,6 +3234,18 @@ h2.title {
     align-items: flex-start
 }
 
+.product__content h1 {
+    font-size: 32px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+@media(max-width: 639px) {
+    .product__content h3 {
+        font-size: 22px;
+    }
+}
+
 .product__btns {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3239,7 +3260,8 @@ h2.title {
 }
 
 .product__btn {
-    width: 40px
+    width: 40px;
+    font-size: 0;
 }
 
 .product__list {
@@ -3544,6 +3566,9 @@ h2.title {
 
 .offcanvas__items .item__pic {
     width: 154px;
+    background-color: #0F0F0F;
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .offcanvas__items .item__list li {
@@ -3890,4 +3915,10 @@ h2.title {
     .delivery {
         padding: 40px 0;
     }
+}
+
+
+.woocommerce-message {
+    color: var(--color-white);
+    padding-bottom: 10px;
 }

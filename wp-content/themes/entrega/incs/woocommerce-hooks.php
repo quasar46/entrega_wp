@@ -57,4 +57,9 @@ remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_
 add_action( 'woocommerce_shop_loop_subcategory_title', function ( $category ) {
 	echo "<h3>$category->name</h3>";
 } );
-
+//
+//add_action('template_redirect', function () {
+//	if (is_product()) {
+//		remove_action('woocommerce_sidebar', 'woocommerce_get_sidebar', 10);
+//	}
+//});
