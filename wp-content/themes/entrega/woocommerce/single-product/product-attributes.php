@@ -43,9 +43,10 @@ if ( ! $product_attributes) {
 ?>
 
 <div class="accordion-container product__ac">
-    <div class="ac"><h4 class="ac-trigger">Все характеристики</h4>
-        <div class="ac-panel"></div>
-    </div>
+<!--    <div class="ac">-->
+<!--        <h4 class="ac-trigger">Все характеристики</h4>-->
+<!--        <div class="ac-panel"></div>-->
+<!--    </div>-->
     <div class="ac">
         <h4 class="ac-trigger">Документация</h4>
         <div class="ac-panel">

@@ -84,19 +84,11 @@
 
 <!--обратная связь -->
 <?php get_template_part( 'template-parts/content-feedback-modal' ); ?>
-<!--корзина-->
-<div class="offcanvas">
-    <div class="offcanvas__head">
-        <h2 class="offcanvas__title">Ваш заказ</h2>
-        <button class="offcanvas__close">
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/exit.svg'; ?>"
-                 alt="">
-        </button>
-    </div>
-    <div class="offcanvas__wrap">
-		<?php woocommerce_mini_cart(); ?>
-    </div>
-</div>
+<!--быстрый заказ -->
+<?php get_template_part( 'template-parts/content-order-modal' ); ?>
+<!--расчитать стоимость -->
+<?php get_template_part( 'template-parts/content-calc-modal' ); ?>
+
 <!--меню-->
 <div class="main-menu">
     <button class="main-menu__close"><img src="/wp-content/uploads/2024/05/close.svg" alt=""></button>
@@ -109,6 +101,19 @@
 		)
 	)
 	?>
+</div>
+<!--корзина-->
+<div class="offcanvas">
+    <div class="offcanvas__head">
+        <h2 class="offcanvas__title">Ваш заказ</h2>
+        <button class="offcanvas__close">
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/exit.svg'; ?>"
+                 alt="">
+        </button>
+    </div>
+    <div class="offcanvas__wrap">
+		<?php woocommerce_mini_cart(); ?>
+    </div>
 </div>
 <div class="overlay"></div>
 </body>

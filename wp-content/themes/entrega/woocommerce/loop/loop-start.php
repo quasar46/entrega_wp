@@ -23,4 +23,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php if ( ! is_front_page() ): ?>
 <div class="catalog__wrap">
     <div class="catalog__cards">
-		<? endif; ?>
+		<?php endif; ?>

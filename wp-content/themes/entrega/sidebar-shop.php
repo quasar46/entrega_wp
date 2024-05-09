@@ -5,6 +5,13 @@ if ( is_shop() ) {
 	?>
     <div class="catalog__top">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	    <?php
+	    $filterreset = $_SERVER['REQUEST_URI'];
+	    $filterreset = strtok($filterreset, '?');
+	    ?>
+        <a class="filter-reset" href="<?php echo $filterreset; ?>">Сбросить
+            <img src="<?php echo get_template_directory_uri() . '/assets/img/arrow-reset.svg'?>" alt="">
+        </a>
     </div>
 <?php }
 ?>

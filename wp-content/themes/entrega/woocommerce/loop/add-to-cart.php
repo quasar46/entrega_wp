@@ -1,3 +1,5 @@
+
+
 <?php
 /**
  * Loop Add to Cart
@@ -26,7 +28,7 @@ echo apply_filters(
 	sprintf(
 		'
 <div class="item__footer-btns">
-<button class="btn btn--main open-modal">Быстрый заказ</button>
+<button class="btn btn--main open-modal-order">Быстрый заказ</button>
 <a href="%s" data-quantity="%s" class="%s" %s>
 		<img src="/wp-content/themes/entrega/assets/img/basket-icn.svg" alt="добавить в корзину">
 </a>

@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         phones.forEach(phone => {
             const mask = new IMask(phone, maskOptions);
         })
-
     }
 
     if (document.querySelectorAll('.open-modal').length > 0) {
@@ -49,6 +48,66 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    if (document.querySelectorAll('.open-modal-order').length > 0) {
+        const btnOpenModal = document.querySelectorAll('.open-modal-order')
+        const modalWindow = document.querySelector('.order-modal')
+        const btnCloseModal = document.querySelectorAll('.modal-close')
+
+        btnCloseModal.forEach(btnCloseModal => {
+            btnCloseModal.addEventListener('click', () => {
+                closeOrder()
+            })
+        })
+
+        btnOpenModal.forEach(el => {
+            el.addEventListener('click', (e) => {
+                openOrder()
+                if (miniCart.classList.contains('show')) {
+                    miniCart.classList.remove('show')
+                }
+            })
+        })
+
+        function openOrder() {
+            modalWindow.classList.add('open')
+            overlay.classList.add('active')
+        }
+
+        function closeOrder() {
+            modalWindow.classList.remove('open')
+            overlay.classList.remove('active')
+        }
+    }
+
+
+    if (document.querySelectorAll('.open-calc').length > 0) {
+        const btnOpenModal = document.querySelectorAll('.open-calc')
+        const modalWindow = document.querySelector('.calc-modal')
+        const btnCloseModal = document.querySelectorAll('.modal-close')
+
+        btnCloseModal.forEach(btnCloseModal => {
+            btnCloseModal.addEventListener('click', () => {
+                closeCalc()
+            })
+        })
+
+        btnOpenModal.forEach(el => {
+            el.addEventListener('click', (e) => {
+                openCalc()
+                miniCart.classList.remove('show')
+            })
+        })
+
+        function openCalc() {
+            modalWindow.classList.add('open')
+            overlay.classList.add('active')
+        }
+
+        function closeCalc() {
+            modalWindow.classList.remove('open')
+            overlay.classList.remove('active')
+        }
+    }
 
     function openMenu() {
         overlay.classList.toggle('active')
@@ -98,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function () {
             closeCart()
             closeMenu()
             closeFeedback()
+            closeOrder()
+            closeCalc()
         }
     })
 
