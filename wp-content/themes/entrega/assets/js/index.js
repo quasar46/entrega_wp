@@ -34,6 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
         btnOpenModal.forEach(el => {
             el.addEventListener('click', (e) => {
                 openFeedback()
+                if (mainMenu.classList.contains('show')) {
+                    mainMenu.classList.remove('show')
+                }
             })
         })
 

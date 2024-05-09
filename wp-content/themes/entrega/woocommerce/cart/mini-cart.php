@@ -54,11 +54,7 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                                     </a>
                                 </h4>
 								<?php
-								echo '<pre>';
-
-//								echo $product->list_attributes();
-								echo '</pre>';
-								//							wc_display_product_attributes( $product );
+								wc_display_product_attributes( $_product );
 								?>
                             </div>
                             <div class="item__price">
@@ -95,14 +91,13 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
                         </div>
 					<?php }
 				}
-
 				?>
             </div>
             <div class="woocommerce-mini-cart__buttons buttons offcanvas__footer">
                 <a class="btn btn--main offcanvas__checkout" href="<?php echo wc_get_checkout_url(); ?>">Оформить
                     заказ</a>
-<!--                <button class="btn btn--main offcanvas__checkout open-modal-order">Оформить-->
-<!--                    заказ</button>-->
+                <!--                <button class="btn btn--main offcanvas__checkout open-modal-order">Оформить-->
+                <!--                    заказ</button>-->
                 <button class="open-calc">
                     <img src="/wp-content/themes/entrega/assets/img/calc-icn.svg" alt="">
                 </button>
