@@ -27,7 +27,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <div <?php wc_product_class( 'item', $product ); ?>>
     <div class="ajax-loader">
-        <img src="<?php echo get_template_directory_uri() . '/assets/img/ripple.svg'?>" alt="">
+        <img src="<?php echo get_template_directory_uri() . '/assets/img/ripple.svg' ?>" alt="">
     </div>
 	<?php
 	/**
@@ -46,7 +46,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
     <div class="item__price">
         <span>Цена</span>
         <div class="item__price-current">
-            <?php woocommerce_template_loop_price(); ?>
+			<?php woocommerce_template_loop_price(); ?>
         </div>
     </div>
 	<?php
@@ -74,7 +74,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 
 	?>
-    <div class="item__footer">
+
+    <div class="item__footer <?php if ( is_product_category() ) {
+		echo 'flex-column';
+	} ?>">
+		<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
 		<?php
 		/**
 		 * Hook: woocommerce_after_shop_loop_item.

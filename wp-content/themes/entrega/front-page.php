@@ -4,6 +4,7 @@ Template Name: Главная
 */
 ?>
 <?php get_header(); ?>
+
     <section class="main-block">
         <div class="container">
             <div class="main-block__wrap">
@@ -13,7 +14,7 @@ Template Name: Главная
                 <img src="/wp-content/uploads/2024/05/main-pic.png" alt=""></div>
         </div>
     </section>
-    <?php get_template_part('template-parts/content-parallax');?>
+<?php get_template_part( 'template-parts/content-parallax' ); ?>
     <section class="catalog-block inner-block --dark">
         <div class="container">
             <div class="catalog-block__wrap"><span class="uptitle">Каталог</span>

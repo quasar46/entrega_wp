@@ -16,9 +16,9 @@
  * @package WooCommerce\Templates
  * @version 7.9.0
  */
+global $product;
 
 defined( 'ABSPATH' ) || exit;
-
 do_action( 'woocommerce_before_mini_cart' ); ?>
 
 <div class="widget_shopping_cart_content">
@@ -53,24 +53,13 @@ do_action( 'woocommerce_before_mini_cart' ); ?>
 									<?php echo $product_name; ?>
                                 </a>
                             </h4>
-                            <ul class="item__list">
-                                <li>
-                                    <span>атрибут 1</span>
-                                    <span>атрибут 2</span>
-                                </li>
-                                <li>
-                                    <span>атрибут 1</span>
-                                    <span>атрибут 2</span>
-                                </li>
-                                <li>
-                                    <span>атрибут 1</span>
-                                    <span>атрибут 2</span>
-                                </li>
-                                <li>
-                                    <span>атрибут 1</span>
-                                    <span>атрибут 2</span>
-                                </li>
-                            </ul>
+							<?php
+							echo '<pre>';
+
+//                            echo $product->list_attributes();
+                            echo '</pre>';
+							wc_display_product_attributes( $product );
+                            ?>
                         </div>
                         <div class="item__price">
                             <span class="item__price-current">  <?php echo $product_price; ?> </span>

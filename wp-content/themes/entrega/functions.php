@@ -18,10 +18,6 @@ add_action( 'after_setup_theme', function () {
 
 } );
 
-// channge content wrapper
-//remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper' );
-//remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
-
 require_once get_template_directory() . '/incs/woocommerce-hooks.php';
 require_once get_template_directory() . '/incs/cpt.php';
 

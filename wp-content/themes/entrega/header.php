@@ -27,15 +27,63 @@
                         <img src="/wp-content/uploads/2024/05/logo.svg" alt="">
                     </a>
                     <div class="header__category">
-                        <!--                    получаем ссылки на категории-->
-	                    <?php
-	                    $args       = array( 'taxonomy' => 'product_cat' );
-	                    $categories = get_categories( $args );
-	                    ?>
-	                    <?php foreach ( $categories as $category ): ?>
-		                    <?php $category_link = get_category_link( $category->term_id ); ?>
-                            <a href="<?= $category_link; ?>"><?= $category->name ?></a>
-	                    <?php endforeach; ?>
+                        <!--                                            получаем ссылки на категории-->
+						<?php
+						$args       = array( 'taxonomy' => 'product_cat' );
+						$categories = get_categories( $args );
+						?>
+						<?php foreach ( $categories as $category ): ?>
+							<?php $category_link = get_category_link( $category->term_id ); ?>
+                            <a href="<?= $category_link; ?>">
+								<?= $category->name ?></a>
+						<?php endforeach; ?>
+                        <!--                        <div class="header__category">-->
+                        <!--                            <div class="header__category-select">-->
+                        <!--                                <button class="category__1">Преобразователи частоты</button>-->
+                        <!--	                            --><?php
+						//	                            $tax     = 'pa_brend';
+						//	                            $pa_args = get_terms( $tax, array(
+						//			                            'hide_empty' => false,
+						//		                            )
+						//	                            );
+						//	                            foreach ( $pa_args as $pa_arg ) {
+						//		                            echo $pa_arg->name;
+						//	                            }
+						//	                            ?>
+                        <!--                            </div>-->
+                        <!--                            <div class="header__category-select">-->
+                        <!--                                <button class="category__2">Устройства плавного пуска</button>-->
+                        <!--	                            --><?php
+						//	                            $tax     = 'pa_brend';
+						//	                            $pa_args = get_terms( $tax, array(
+						//			                            'hide_empty' => false,
+						//		                            )
+						//	                            );
+						//                                echo '<pre>';
+						//                                var_dump($pa_args);
+						//                                echo '</pre>';
+						//	                            foreach ( $pa_args as $pa_arg ) {
+						//		                            echo $pa_arg->name;
+						//	                            }
+						//	                            ?>
+                        <!--                            </div>-->
+                        <!--                            <div class="header__category-select">-->
+                        <!--                                <button class="category__3">Запасные части</button>-->
+                        <!--	                            --><?php
+						//	                            $tax     = 'pa_brend';
+						//	                            $pa_args = get_terms( $tax, array(
+						//			                            'hide_empty' => false,
+						//		                            )
+						//	                            );
+						//	                            foreach ( $pa_args as $pa_arg ) {
+						//		                            echo $pa_arg->name;
+						//	                            }
+						//	                            ?>
+                        <!--                            </div>-->
+                        <!---->
+                        <!---->
+                        <!--                        </div>-->
+
                     </div>
                     <div class="header__btns">
                         <button class="header__search">

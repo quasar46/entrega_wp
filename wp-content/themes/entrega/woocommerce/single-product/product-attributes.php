@@ -16,15 +16,18 @@
  * @package WooCommerce\Templates
  * @version 3.6.0
  */
-
 defined( 'ABSPATH' ) || exit;
-
-if ( ! $product_attributes ) {
+if ( ! $product_attributes) {
 	return;
 }
 ?>
 <div class="product__spec">
-    <h3>Характеристики</h3>
+	<?php
+	if ( is_product() ) {
+		echo '<h3>Характеристики</h3>';
+	}
+	?>
+
     <table class="woocommerce-product-attributes shop_attributes">
 		<?php foreach ( $product_attributes as $product_attribute_key => $product_attribute ) : ?>
             <tr class="woocommerce-product-attributes-item woocommerce-product-attributes-item--<?php echo esc_attr( $product_attribute_key ); ?>">
@@ -35,6 +38,10 @@ if ( ! $product_attributes ) {
     </table>
 </div> <!-- ./product__spec-->
 
+<?php
+    if (is_product()):
+?>
+
 <div class="accordion-container product__ac">
     <div class="ac"><h4 class="ac-trigger">Все характеристики</h4>
         <div class="ac-panel"></div>
@@ -43,19 +50,21 @@ if ( ! $product_attributes ) {
         <h4 class="ac-trigger">Документация</h4>
         <div class="ac-panel">
             <a href="" download>
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/file-down.svg'?>" alt="">Название
+                <img src="<?php echo get_template_directory_uri() . '/assets/img/file-download.svg' ?>" alt="">Название
                 документа </a>
             <a href="" download>
-                <img src="icons/file-down..svg" alt="">Название
+                <img src="/wp-content/themes/entrega/assets/img/file-download.svg" alt="">Название
                 документа </a>
             <a href="" download>
-                <img src="icons/file-down..svg" alt="">Название
+                <img src="/wp-content/themes/entrega/assets/img/file-download.svg" alt="">Название
                 документа </a>
             <a href="" download>
-                <img src="icons/file-down..svg" alt="">Название
+                <img src="/wp-content/themes/entrega/assets/img/file-download.svg" alt="">Название
                 документа </a>
             <a href="" download>
-                <img src="icons/file-down..svg" alt="">Название
+                <img src="/wp-content/themes/entrega/assets/img/file-download.svg" alt="">Название
                 документа</a></div>
     </div>
 </div>
+
+<?php endif; ?>
