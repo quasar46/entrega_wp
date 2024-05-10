@@ -682,13 +682,10 @@ body {
     overflow-x: hidden
 }
 
-.woocommerce-checkout main.main, .woocommerce-cart main.main {
+.page-template-default main.main {
     background-color: var(--color-white);
     padding-top: 80px;
     padding-bottom: 80px;
-}
-
-.woocommerce-checkout main.main, .woocommerce-cart main.main {
     max-width: 1440px;
     width: 100%;
     padding-left: 80px;
@@ -697,15 +694,16 @@ body {
     margin-right: auto
 }
 
+
 @media (max-width: 1439px) {
-    .woocommerce-checkout main.main, .woocommerce-cart main.main {
+    .page-template-default main.main {
         padding-left: 40px;
         padding-right: 40px
     }
 }
 
 @media (max-width: 639px) {
-    .woocommerce-checkout main.main, .woocommerce-cart main.main {
+    .page-template-default main.main {
         padding-left: 24px;
         padding-right: 24px
     }
@@ -2581,7 +2579,7 @@ h2.title {
     gap: 16px;
 }
 
-@media(max-width: 639px) {
+@media (max-width: 639px) {
     .form__checkboxes {
         flex-direction: column;
     }
@@ -2596,7 +2594,7 @@ h2.title {
     cursor: pointer;
 }
 
-@media(max-width: 639px) {
+@media (max-width: 639px) {
     .form__checkboxes .wpcf7-list-item {
         width: 100%;
     }
@@ -2616,7 +2614,7 @@ h2.title {
     background-color: var(--color-base);
     display: block;
     font-size: 0;
-    background-size: contain ;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
@@ -2647,13 +2645,13 @@ h2.title {
 }
 
 
-@media(max-width: 639px) {
+@media (max-width: 639px) {
     .form__checkboxes .wpcf7-list-item-label {
         width: 100%;
     }
 }
 
-@media(max-width: 1023px) {
+@media (max-width: 1023px) {
     .form__checkboxes .wpcf7-list-item-label {
         font-size: 0;
     }
@@ -3148,14 +3146,14 @@ h2.title {
     width: 100%
 }
 
-@media(max-width: 1439px) {
+@media (max-width: 1439px) {
     .catalog__top {
         flex-direction: column;
         gap: 40px;
     }
 }
 
-@media(max-width: 767px) {
+@media (max-width: 767px) {
     .catalog__top {
         /*flex-direction: row;*/
         /*gap: 0;*/
@@ -4605,3 +4603,39 @@ h2.title {
 .wc-block-components-product-metadata {
     display: none;
 }
+
+.woocommerce-pagination .page-numbers {
+    display: flex;
+    align-items: center;
+    color: var(--color-white);
+    gap: 10px;
+}
+
+.woocommerce-pagination .page-numbers li {
+    display: flex;
+
+}
+
+.woocommerce-pagination .page-numbers li > * {
+    padding: 0 10px;
+    border-radius: 8px;
+    border: 1px solid var(--color-green);
+    background-color: var(--color-base);
+    color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
+.woocommerce-pagination .page-numbers li > a:hover {
+    color: var(--color-base);
+    background-color: var(--color-green);
+    transition: all 0.3s ease;
+}
+
+
+.wpcf7-not-valid-tip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+

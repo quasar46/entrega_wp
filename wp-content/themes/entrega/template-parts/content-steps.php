@@ -41,9 +41,8 @@
 								индивидуальна и
 								будет рассчитана после оформления заказа.</p>
 							<p>Самовывоз по адресу МО, г. Химки, Вашутинское шоссе 24Б</p></div>
-						<a class="btn btn--second open-modal" href="" >Связаться</a><img class="item__icn"
-						                                                     src="/wp-content/uploads/2024/05/icn1.png"
-						                                                     alt="">
+						<button class="btn btn--second open-modal" href="" >Связаться</button>
+                        <img class="item__icn" src="/wp-content/uploads/2024/05/icn1.png" alt="">
 					</div>
 				</div>
 			</div>

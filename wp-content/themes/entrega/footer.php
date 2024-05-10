@@ -74,8 +74,8 @@
                     </div>
                 </div>
             </div>
-            <div class="footer__bottom"><a href="">ООО Интрега Инжиниринг</a><a href="">Соглашение на обработку
-                    персональных данных</a><a href="">Политика конфиденциальности</a><a href="">Разработка сайта</a>
+            <div class="footer__bottom"><a href="/">ООО Интрега Инжиниринг</a><a href="">Соглашение на обработку
+                    персональных данных</a><a href="/?page_id=17">Политика конфиденциальности</a><a target="_blank" href="https://t.me/LadyMmargo">Разработка сайта</a>
             </div>
         </div>
 </footer>
