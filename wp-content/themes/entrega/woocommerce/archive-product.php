@@ -5,10 +5,8 @@
     </section>
     <section class="catalog">
         <div class="container">
-            <div class="catalog__wrap">
-				<?php do_action( 'woocommerce_sidebar' ); ?>
 				<?php if ( is_shop() ) {
-
+					do_action( 'woocommerce_sidebar' );
 				} else {
 					woocommerce_output_all_notices();
 				}
@@ -48,7 +46,6 @@
 					do_action( 'woocommerce_no_products_found' );
 				}
 				?>
-            </div>
         </div> <!-- /container -->
     </section>
 <?php get_template_part( 'template-parts/content-feedback' ); ?>

@@ -24,7 +24,9 @@ global $product;
 ?>
 <div class="product__order">
     <div class="product__price">
-        <span class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></span>
+        <span class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>">
+            <?php echo $product->get_price_html(); ?>
+        </span>
         <p>НДС включен в цену</p>
     </div> <!--./product__price-->
 

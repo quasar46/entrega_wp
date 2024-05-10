@@ -39,7 +39,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 </linearGradient>
 </defs>
 </svg>
-
     </span>
 	<?php
 	/**
