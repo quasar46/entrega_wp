@@ -48,7 +48,17 @@ if ( $product->is_in_stock() ) : ?>
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
         <div class="product__btns">
-            <a class="product__btn"><img src="/wp-content/uploads/2024/05/calc-icn.svg" alt=""></a>
+            <a class="btn btn--main open-order">Быстрый заказ</a>
+            <a class="product__btn open-calc" id="tip">
+                <img src="/wp-content/uploads/2024/05/calc-icn.svg" alt="открыть расчет доставки">
+            </a>
+            <script src="https://unpkg.com/@popperjs/core@2"></script>
+            <script src="https://unpkg.com/tippy.js@6"></script>
+            <script>
+                tippy('#tip', {
+                    content: 'РАССЧИТАТЬ ДОСТАВКУ',
+                });
+            </script>
             <button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>"
                     class="product__btn single_add_to_cart_button button alt<?php echo esc_attr( wc_wp_theme_get_element_class_name( 'button' ) ? ' ' . wc_wp_theme_get_element_class_name( 'button' ) : '' ); ?>"><?php echo esc_html( $product->single_add_to_cart_text() ); ?>
                 <img src="/wp-content/uploads/2024/05/basket-icn.svg"></button>

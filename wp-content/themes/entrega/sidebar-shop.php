@@ -1,21 +1,18 @@
 <?php
-if ( is_shop() ) {
-    return;
-} else {
-	?>
-    <div class="catalog__top">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	    <?php
-	    $filterreset = $_SERVER['REQUEST_URI'];
-	    $filterreset = strtok($filterreset, '?');
-	    ?>
-        <a class="filter-reset" href="<?php echo $filterreset; ?>">Сбросить
-            <img src="<?php echo get_template_directory_uri() . '/assets/img/arrow-reset.svg'?>" alt="">
-        </a>
-    </div>
-<?php }
+if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	return;
+}
 ?>
-
+<div class="catalog__top">
+	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php
+	$filterreset = $_SERVER['REQUEST_URI'];
+	$filterreset = strtok( $filterreset, '?' );
+	?>
+    <a class="filter-reset" href="<?php echo $filterreset; ?>">Сбросить
+        <img src="<?php echo get_template_directory_uri() . '/assets/img/arrow-reset.svg' ?>" alt="">
+    </a>
+</div>
 
 <!--    <button class="catalog__reset">Сбросить-->
 <!--        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->

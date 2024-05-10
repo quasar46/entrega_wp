@@ -14,7 +14,7 @@ Template Name: Главная
                 <img src="/wp-content/uploads/2024/05/main-pic.png" alt=""></div>
         </div>
     </section>
-<?php get_template_part( 'template-parts/content-parallax' ); ?>
+<?php //get_template_part( 'template-parts/content-parallax' ); ?>
     <section class="catalog-block inner-block --dark">
         <div class="container">
             <div class="catalog-block__wrap"><span class="uptitle">Каталог</span>
@@ -24,7 +24,7 @@ Template Name: Главная
                 </div>
                 <a class="btn btn--main" href="/shop">Открыть каталог</a>
                 <div class="catalog-block__footer"><span>Каталог регулярно дополняется. </span><span>Если вы не нашли подходящий товар,<br>свяжитесь с нами</span><a
-                            class="btn btn--second open-modal">Связаться</a></div>
+                            class="btn btn--second open-modal-feedback">Связаться</a></div>
             </div>
         </div>
     </section>

@@ -25,7 +25,7 @@
 					<div class="ac-panel">
 						<div class="item__text"><p>Выставляем счёт после оформления заказа и обсуждения всех
 								условий доставки с меннеджером.</p></div>
-						<button class="btn btn--second open-modal">Связаться</button><img class="item__icn"
+						<button class="btn btn--second open-modal-feedback">Связаться</button><img class="item__icn"
 						                                                     src="/wp-content/uploads/2024/05/icn1.png"
 						                                                     alt="">
 					</div>
@@ -41,7 +41,7 @@
 								индивидуальна и
 								будет рассчитана после оформления заказа.</p>
 							<p>Самовывоз по адресу МО, г. Химки, Вашутинское шоссе 24Б</p></div>
-						<button class="btn btn--second open-modal" href="" >Связаться</button>
+						<button class="btn btn--second open-modal-feedback" href="" >Связаться</button>
                         <img class="item__icn" src="/wp-content/uploads/2024/05/icn1.png" alt="">
 					</div>
 				</div>

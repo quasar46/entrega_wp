@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     main.style.marginTop = headerHeight + 'px'
 
+
     if (document.querySelectorAll('.phone').length > 0) {
         const phones = document.querySelectorAll('.phone')
         const maskOptions = {
@@ -20,18 +21,23 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    if (document.querySelectorAll('.open-modal').length > 0) {
-        const btnOpenModal = document.querySelectorAll('.open-modal')
-        const modalWindow = document.querySelector('.feedback-modal')
-        const btnCloseModal = document.querySelectorAll('.modal-close')
 
+
+    const btnOpenFeedback = document.querySelectorAll('.open-modal-feedback')
+    const modalFeedback = document.querySelector('.feedback-modal')
+    const btnCloseModal = document.querySelectorAll('.modal-close')
+    const btnOpenOrder = document.querySelectorAll('.open-modal-order')
+    const modalOrder = document.querySelector('.order-modal')
+
+
+    if (document.querySelectorAll('.open-modal-feedback').length > 0) {
         btnCloseModal.forEach(btnCloseModal => {
             btnCloseModal.addEventListener('click', () => {
                 closeFeedback()
             })
         })
 
-        btnOpenModal.forEach(el => {
+        btnOpenFeedback.forEach(el => {
             el.addEventListener('click', (e) => {
                 openFeedback()
                 if (mainMenu.classList.contains('show')) {
@@ -41,28 +47,24 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         function openFeedback() {
-            modalWindow.classList.add('open')
+            modalFeedback.classList.add('open')
             overlay.classList.add('active')
         }
 
         function closeFeedback() {
-            modalWindow.classList.remove('open')
+            modalFeedback.classList.remove('open')
             overlay.classList.remove('active')
         }
     }
 
     if (document.querySelectorAll('.open-modal-order').length > 0) {
-        const btnOpenModal = document.querySelectorAll('.open-modal-order')
-        const modalWindow = document.querySelector('.order-modal')
-        const btnCloseModal = document.querySelectorAll('.modal-close')
-
         btnCloseModal.forEach(btnCloseModal => {
             btnCloseModal.addEventListener('click', () => {
                 closeOrder()
             })
         })
 
-        btnOpenModal.forEach(el => {
+        btnOpenOrder.forEach(el => {
             el.addEventListener('click', (e) => {
                 openOrder()
                 if (miniCart.classList.contains('show')) {
@@ -72,21 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         function openOrder() {
-            modalWindow.classList.add('open')
+            modalOrder.classList.add('open')
             overlay.classList.add('active')
         }
 
         function closeOrder() {
-            modalWindow.classList.remove('open')
+            modalOrder.classList.remove('open')
             overlay.classList.remove('active')
         }
     }
 
 
     if (document.querySelectorAll('.open-calc').length > 0) {
-        const btnOpenModal = document.querySelectorAll('.open-calc')
-        const modalWindow = document.querySelector('.calc-modal')
-        const btnCloseModal = document.querySelectorAll('.modal-close')
+        const btnOpenCalc = document.querySelectorAll('.open-calc')
+        const modalCalc = document.querySelector('.calc-modal')
 
         btnCloseModal.forEach(btnCloseModal => {
             btnCloseModal.addEventListener('click', () => {
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
 
-        btnOpenModal.forEach(el => {
+        btnOpenCalc.forEach(el => {
             el.addEventListener('click', (e) => {
                 openCalc()
                 miniCart.classList.remove('show')
@@ -102,19 +103,18 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 
         function openCalc() {
-            modalWindow.classList.add('open')
+            modalCalc.classList.add('open')
             overlay.classList.add('active')
         }
 
         function closeCalc() {
-            modalWindow.classList.remove('open')
+            modalCalc.classList.remove('open')
             overlay.classList.remove('active')
         }
     }
 
     function openMenu() {
         overlay.classList.toggle('active')
-        body.style.overflow = 'hidden'
         mainMenu.classList.add('show')
     }
 
@@ -157,11 +157,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     overlay.addEventListener('click', function (e) {
         if (e.target.classList.contains('overlay')) {
-            closeCart()
-            closeMenu()
-            closeFeedback()
-            closeOrder()
-            closeCalc()
+            if (document.querySelector('.feedback-modal').classList.contains('open')) {
+                closeFeedback()
+            }
+            if (document.querySelector('.offcanvas').classList.contains('show')) {
+                closeCart()
+            }
+            if (document.querySelector('.main-menu').classList.contains('show')) {
+                closeMenu()
+            }
+            // if (document.querySelector('.main-menu').classList.contains('show')) {
+            //     closeOrder()
+            // }
+            // if (document.querySelector('.main-menu').classList.contains('show')) {
+            //     closeCalc()
+            // }
+
         }
     })
 
@@ -724,11 +735,11 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         "undefined" != typeof module && void 0 !== module.exports ? module.exports = n : e.Accordion = n
     }(window);
+
+
     if (document.querySelector('.accordion-container')) {
         new Accordion('.accordion-container');
     }
-
-
 
 
     // parallax
@@ -760,7 +771,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //
     // wrapper.addEventListener('mousemove', handleParallax);
     // wrapper.addEventListener('mouseout', reset);
-
 
 
 })

@@ -14,6 +14,7 @@ Template Name: О компании
         <div class="about__wrap"><h1 class="title"><?php the_title();?></h1></div>
     </div>
 </section>
+1231321321
 <?php get_template_part( 'template-parts/content-about-us' ); ?>
 
 <?php get_template_part( 'template-parts/content-partners' ); ?>

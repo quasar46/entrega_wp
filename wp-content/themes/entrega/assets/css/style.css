@@ -3133,6 +3133,7 @@ h2.title {
 }
 
 .catalog__top {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -3153,10 +3154,9 @@ h2.title {
     }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .catalog__top {
-        /*flex-direction: row;*/
-        /*gap: 0;*/
+        align-items: flex-start;
     }
 }
 
@@ -3191,6 +3191,10 @@ h2.title {
     grid-gap: 16px;
     gap: 16px;
     width: 100%;
+}
+
+.catalog__cards .item.product-category {
+    display: none;
 }
 
 @media (max-width: 1023px) {
@@ -3600,7 +3604,9 @@ h2.title {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 40px
+    gap: 40px;
+    cursor: pointer;
+    align-items: center;
 }
 
 @media (max-width: 1439px) {
@@ -3921,6 +3927,19 @@ h2.title {
     text-transform: uppercase;
 }
 
+@media(max-width: 1439px) {
+    .offcanvas__title {
+        font-size: 32px;
+    }
+}
+
+@media(max-width: 639px) {
+    .offcanvas__title {
+        font-size: 22px;
+    }
+}
+
+
 .offcanvas__wrap {
     /*padding: 40px;*/
     display: flex;
@@ -4100,7 +4119,7 @@ h2.title {
     background: linear-gradient(271.61deg, #0A0A0A 1.36%, #0A0A0A 1.36%, #171717 50.19%, #0A0A0A 100%);
     border-radius: 4px;
     color: #fff;
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 .wpc-filters-widget-select {
@@ -4137,6 +4156,7 @@ h2.title {
     position: absolute;
     top: 0;
     height: 100%;
+    cursor: pointer;
 }
 
 .woocommerce-mini-cart__empty-message {
@@ -4330,6 +4350,16 @@ h2.title {
     padding-bottom: 10px;
 }
 
+.woocommerce-message a {
+    /*color: var(--color-green);*/
+    padding-right: 5px;
+    text-decoration: underline;
+}
+
+.woocommerce-message a:hover {
+    color: var(--color-green);
+}
+
 .product__description {
     padding: 80px 0;
 }
@@ -4472,9 +4502,11 @@ h2.title {
 
 .advantages__row:nth-child(2) {
     justify-content: center;
+    margin: auto;
 }
 
 .advantages__block {
+    position: relative;
     background-color: #0F0F0F;
     padding: 24px;
     color: var(--color-white);
@@ -4551,6 +4583,25 @@ h2.title {
     flex-direction: column;
     gap: 80px;
     min-height: 100vh;
+    padding: 50px 0;
+}
+
+@media(max-width: 1439px) {
+    .advantages__wrap {
+        background-size: 586px auto;
+    }
+}
+
+@media(max-width: 1023px) {
+    .advantages__wrap {
+        background-size: 560px auto;
+    }
+}
+
+@media(max-width: 639px) {
+    .advantages__wrap {
+        background-size: 312px auto;
+    }
 }
 
 @media (max-width: 639px) {
@@ -4584,6 +4635,26 @@ h2.title {
     gap: 8px;
 }
 
+@media(max-width: 767px) {
+    .filter-reset {
+        position: absolute;
+        right: 0;
+        top: 4px;
+    }
+}
+
+.wpc-icon-html-wrapper span {
+    background-color: var(--color-green) !important;
+}
+
+span.wpc-icon-line-1:after, span.wpc-icon-line-2:after, span.wpc-icon-line-3:after {
+    background-color: var(--color-green) !important;
+}
+
+.wpc-open-close-filters-button {
+    margin-bottom: 0 !important;
+}
+
 .wpc-chip-reset-all {
     display: none;
 }
@@ -4608,8 +4679,10 @@ h2.title {
 .woocommerce-pagination .page-numbers {
     display: flex;
     align-items: center;
+    justify-content: center;
     color: var(--color-white);
     gap: 10px;
+    margin-top: 40px;
 }
 
 .woocommerce-pagination .page-numbers li {

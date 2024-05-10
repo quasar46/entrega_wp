@@ -21,7 +21,7 @@
             </div>
             <div class="footer__block footer__block--btns">
                 <div class="footer__btns"><a class="btn btn--second" href="/shop">открыть каталог</a>
-                    <button class="btn btn--second open-modal">Обратная связь</button>
+                    <button class="btn btn--second open-modal-feedback">Обратная связь</button>
                 </div>
             </div>
             <div class="footer__block footer__block--list">

@@ -3,8 +3,6 @@
 		<?php
 		if ( is_product() ) {
 			echo '<span class="uptitle">О нас</span>';
-		} else {
-			return;
 		}
 		?>
         <div class="about__wrap">
