@@ -48,7 +48,7 @@ if ( $product->is_in_stock() ) : ?>
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
 		?>
         <div class="product__btns">
-            <a class="btn btn--main open-order">Быстрый заказ</a>
+            <a class="btn btn--main open-modal-order">Быстрый заказ</a>
             <a class="product__btn open-calc" id="tip">
                 <img src="/wp-content/uploads/2024/05/calc-icn.svg" alt="открыть расчет доставки">
             </a>

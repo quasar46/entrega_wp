@@ -6,14 +6,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const overlay = document.querySelector('.overlay')
     const main = document.querySelector('main')
     const headerHeight = document.querySelector('header').offsetHeight
+    const mainBlock = document.querySelector('.main-block')
 
-    main.style.marginTop = headerHeight + 'px'
+    if (mainBlock) {
+        if (window.innerWidth > 1439) {
+            mainBlock.style.paddingTop = headerHeight + 100 + 'px';
+        }
 
-    document.addEventListener('click', function (e) {
-        const target = e.target;
-        console.log(target)
-    })
+        if (window.innerWidth < 1440 && window.innerWidth > 639) {
+            mainBlock.style.paddingTop = headerHeight + 65 + 'px';
+        }
 
+        if (window.innerWidth < 640) {
+            mainBlock.style.paddingTop = headerHeight + 40 + 'px';
+        }
+    }
 
     if (document.querySelectorAll('.phone').length > 0) {
         const phones = document.querySelectorAll('.phone')
@@ -182,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const headerBottom = document.querySelector('.header__bottom')
     const headerTop = document.querySelector('.header__top').offsetHeight
-    headerBottom.style = `margin-top: ${headerTop}px`
+    // headerBottom.style = `margin-top: ${headerTop}px`
 
     const searchInput = document.querySelector('.aws-container .aws-search-form .aws-wrapper');
     const btnSearch = document.querySelector('.aws-search-btn');
@@ -489,13 +496,13 @@ document.addEventListener('DOMContentLoaded', function () {
 //# sourceMappingURL=sticky-header.js.map
 
     new StickyHeader({
-        selector: '.header__bottom',             // Header or container selector
+        selector: '.header',             // Header or container selector
         linkSelector: 'a, strong',
         scrollSettings: {
-            startHeight: 100,           // Starting height for the container
-            stopHeight: 100,             // StopHeight for the container after reaching the stopPosition
+            startHeight: 143,           // Starting height for the container
+            stopHeight: 143,             // StopHeight for the container after reaching the stopPosition
             stopPosition: 0,          // Container will shrink to stopHeight until reaching this position
-            breakPosition: 600,         // Hide position
+            breakPosition: 100,         // Hide position
         },
         classes: {
             useClasses: true,          // Toggle classes on or off
@@ -745,12 +752,17 @@ document.addEventListener('DOMContentLoaded', function () {
         new Accordion('.accordion-container');
     }
 
-    const priceValue = document.querySelector('.wpc-filter-content.wpc-filter-_price')
-    const btnShowPriceValue = document.querySelector('.wpc-filters-section.wpc-filter-_price .wpc-filter-header')
-    btnShowPriceValue.addEventListener('click', function () {
-        console.log('1')
-        priceValue.classList.toggle('show');
-    })
-
+    // if (document.querySelector('.wpc-filter-content.wpc-filter-_price')) {
+    //     const priceValue = document.querySelector('.wpc-filter-content.wpc-filter-_price')
+    //     const btnShowPriceValue = document.querySelector('.wpc-filters-section.wpc-filter-_price .wpc-filter-header')
+    //     btnShowPriceValue.addEventListener('click', function () {
+    //         console.log('1')
+    //         priceValue.classList.toggle('show');
+    //     })
+    // }
+    // document.addEventListener('click', function (e) {
+    //     const target = e.target;
+    //     console.log(target)
+    // })
 })
 
