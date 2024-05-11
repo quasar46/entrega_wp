@@ -1265,6 +1265,7 @@ section {
     position: fixed;
     width: 100%;
     background: var(--color-base);
+    background: url('/wp-content/themes/entrega/assets/img/back-home-first-block.png');
     z-index: 100;
     border-radius: 0 0 16px 16px;
 }
@@ -1551,6 +1552,27 @@ section {
         font-size: 10px;
         margin-bottom: 16px
     }
+}
+
+.page-content h1 {
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@media (max-width: 639px) {
+    .page-content h1 {
+        font-size: 30px;
+    }
+}
+
+.page-content .woocommerce-breadcrumb {
+    justify-content: flex-start;
+}
+
+.page-content .woocommerce-breadcrumb a {
+    color: var(--color-base);
 }
 
 h1.title {
@@ -1888,6 +1910,7 @@ h2.title {
 
 .main-menu__wrap li {
     text-align: right;
+    position: relative;
 }
 
 .main-menu a {
@@ -1929,18 +1952,48 @@ h2.title {
 }
 
 .sub-menu {
-    display: none;
     padding-top: 20px;
     flex-direction: column;
+    right: 0;
+    top: 100%;
     gap: 12px;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    position: absolute;
+    z-index: -1;
 }
 
 .sub-menu a {
     font-size: 18px;
 }
 
+.show-sub-menu {
+    position: relative;
+    padding-right: 24px;
+}
+
+.show-sub-menu::before {
+    content:"";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-image: url("/wp-content/themes/entrega/assets/img/arrow-down.svg");
+    background-size: 16px auto;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .show-sub-menu:hover .sub-menu {
-    display: flex;
+    background: var(--color-base);
+    padding: 20px;
+    margin-right: 20px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+    z-index: 11111;
 }
 
 .overlay {
@@ -2362,6 +2415,7 @@ h2.title {
     text-transform: uppercase;
     cursor: pointer;
     width: 100%;
+    z-index: 10;
 }
 
 @media (max-width: 1439px) {
@@ -3689,6 +3743,7 @@ form.cart {
     .product__btns {
         justify-content: space-between;
     }
+
     .product__btn.single_add_to_cart_button {
         position: absolute;
         width: 40px;
@@ -4833,6 +4888,7 @@ span.wpc-icon-line-1:after, span.wpc-icon-line-2:after, span.wpc-icon-line-3:aft
     top: 100%;
     left: 0;
     width: 100%;
+    z-index: 1;
 }
 
 .main-block {

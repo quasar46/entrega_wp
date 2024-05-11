@@ -15,12 +15,19 @@
 get_header();
 ?>
 
-<?php if ( have_posts() ) : while ( have_posts() ): the_post(); ?>
-    <h1><?php the_title(); ?></h1>
-	<?php the_content(); ?>
+<div class="container page-content">
+	<?php
+	if ( function_exists( 'yoast_breadcrumb' ) ) {
+		yoast_breadcrumb( '<div class = "woocommerce-breadcrumb" >', '</div>' );
+	};
+	?>
+	<?php if ( have_posts() ) : while ( have_posts() ): the_post(); ?>
+        <h1><?php the_title(); ?></h1>
+		<?php the_content(); ?>
 
+	<?php endwhile; else: ?>
+        Записей нет.
+	<?php endif; ?>
+</div>
 
-<?php endwhile; else: ?>
-    Записей нет.
-<?php endif; ?>
 <?php get_footer(); ?>

@@ -167,25 +167,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     overlay.addEventListener('click', function (e) {
-        if (e.target.classList.contains('overlay')) {
-            if (document.querySelector('.feedback-modal').classList.contains('open')) {
+        if (e.target.classList.contains('overlay') || e.target.classList.contains('open')) {
+            console.log('тык на оверлэй')
                 closeFeedback()
-            }
-            if (document.querySelector('.offcanvas').classList.contains('show')) {
                 closeCart()
-            }
-            if (document.querySelector('.main-menu').classList.contains('show')) {
                 closeMenu()
-            }
-            // if (document.querySelector('.main-menu').classList.contains('show')) {
-            //     closeOrder()
-            // }
-            // if (document.querySelector('.main-menu').classList.contains('show')) {
-            //     closeCalc()
-            // }
-
         }
     })
+
 
     const headerBottom = document.querySelector('.header__bottom')
     const headerTop = document.querySelector('.header__top').offsetHeight

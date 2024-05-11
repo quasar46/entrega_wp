@@ -29,7 +29,7 @@
                 <div class="container">
                     <a class="header__logo" href="<?php echo home_url( '/' ) ?>">
 <!--                        <img src="/wp-content/uploads/2024/05/logo.svg" alt="">-->
-                        <svg width="126" height="40" viewBox="0 0 126 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <svg width="100%" height="auto" viewBox="0 0 126 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                             <rect y="0.5" width="126" height="39" fill="url(#pattern0_755_665)"/>
                             <defs>
                                 <pattern id="pattern0_755_665" patternContentUnits="objectBoundingBox" width="1" height="1">
