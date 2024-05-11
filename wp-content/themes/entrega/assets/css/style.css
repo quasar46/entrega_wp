@@ -1268,7 +1268,8 @@ section {
 }
 
 .header__logo {
-    width: 126px
+    width: 126px;
+    display: inline-block;
 }
 
 @media (max-width: 639px) {
@@ -4146,6 +4147,10 @@ h2.title {
     text-transform: uppercase;
 }
 
+.wpc-filters-section {
+    cursor: pointer;
+}
+
 #wpc_filters_widget-2 .wpc-filters-section {
     margin-bottom: 0;
     position: relative;
@@ -4223,6 +4228,21 @@ h2.title {
 
 }
 
+.wpc-filter-content.wpc-filter-_price {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.wpc-filter-content.wpc-filter-_price.show {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease;
+}
+
 .wpc-filters-widget-select {
     /*background: linear-gradient(271.61deg, #0A0A0A 1.36%, #0A0A0A 1.36%, #171717 50.19%, #0A0A0A 100%);*/
     background: transparent;
@@ -4296,6 +4316,7 @@ h2.title {
     background-size: 40px auto;
     background-repeat: no-repeat;
     background-position: right 24px bottom 24px;
+    background-color: #201F1F;
 }
 
 .category-home .item:hover {

@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     main.style.marginTop = headerHeight + 'px'
 
+    document.addEventListener('click', function (e) {
+        const target = e.target;
+        console.log(target)
+    })
+
 
     if (document.querySelectorAll('.phone').length > 0) {
         const phones = document.querySelectorAll('.phone')
@@ -20,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const mask = new IMask(phone, maskOptions);
         })
     }
-
 
 
     const btnOpenFeedback = document.querySelectorAll('.open-modal-feedback')
@@ -490,7 +494,7 @@ document.addEventListener('DOMContentLoaded', function () {
         scrollSettings: {
             startHeight: 100,           // Starting height for the container
             stopHeight: 100,             // StopHeight for the container after reaching the stopPosition
-            stopPosition: 1,          // Container will shrink to stopHeight until reaching this position
+            stopPosition: 0,          // Container will shrink to stopHeight until reaching this position
             breakPosition: 600,         // Hide position
         },
         classes: {
@@ -741,37 +745,12 @@ document.addEventListener('DOMContentLoaded', function () {
         new Accordion('.accordion-container');
     }
 
-
-    // parallax
-    // const wrapper = document.querySelector('.parallax');
-    // const layers = document.querySelectorAll('.parallax__layer');
-    //
-    // const handleParallax = (evt) => {
-    //     //размер области просмотра
-    //     const parallaxLeftOffset = wrapper.getBoundingClientRect().left;
-    //     const parallaxTopOffset = wrapper.getBoundingClientRect().top;
-    //
-    //     // координаты центра экрана
-    //     const coordX = evt.clientX - parallaxLeftOffset - 0.5 * wrapper.offsetWidth;
-    //     const coordY = evt.clientY - parallaxTopOffset - 0.5 *  wrapper.offsetHeight;
-    //
-    //     layers.forEach((layer)=>{
-    //         const layerSpeed = layer.dataset.speed;
-    //         const x = - (coordX * layerSpeed).toFixed(2);
-    //         const y = - (coordY * layerSpeed).toFixed(2);
-    //         layer.setAttribute('style', `transform: translate(${x}px, ${y}px);`)
-    //     });
-    // };
-    //
-    // const reset = () => {
-    //     layers.forEach((layer)=>{
-    //         layer.removeAttribute('style');
-    //     });
-    // }
-    //
-    // wrapper.addEventListener('mousemove', handleParallax);
-    // wrapper.addEventListener('mouseout', reset);
-
+    const priceValue = document.querySelector('.wpc-filter-content.wpc-filter-_price')
+    const btnShowPriceValue = document.querySelector('.wpc-filters-section.wpc-filter-_price .wpc-filter-header')
+    btnShowPriceValue.addEventListener('click', function () {
+        console.log('1')
+        priceValue.classList.toggle('show');
+    })
 
 })
 
